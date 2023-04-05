@@ -8,7 +8,7 @@ const CONFIG_FILE_PATH = process.env['config_path'] || 'config.xml'
 
 const NAME = process.env['name'];
 const ID = process.env['id'];
-const VERSION = process.env['version'];
+const VERSION = process.env['app_version'];
 
 const ANDROID_VERSION_CODE = process.env['android_version_code'];
 const ANDROID_PACKAGE_NAME = process.env['android_package_name'];
