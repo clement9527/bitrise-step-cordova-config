@@ -14,6 +14,7 @@ const ANDROID_VERSION_CODE = process.env['android_version_code'];
 const ANDROID_PACKAGE_NAME = process.env['android_package_name'];
 const IOS_BUNDLE_VERSION = process.env['ios_bundle_version'];
 const IOS_BUNDLE_IDENTIFIER = process.env['ios_bundle_identifier'];
+const HOSTNAME = process.env['hostname'];
 
 // Load and parse the config.xml
 const config = new Config(path.join(SOURCE_PATH, CONFIG_FILE_PATH));
@@ -58,6 +59,10 @@ if (IOS_BUNDLE_IDENTIFIER) {
   config.setIOSBundleIdentifier(IOS_BUNDLE_IDENTIFIER);
 
   log('ios-CFBundleIdentifier', IOS_BUNDLE_IDENTIFIER);
+}
+
+if (HOSTNAME) {
+  config.setPreference('hostname', HOSTNAME);
 }
 
 // Write the config file
